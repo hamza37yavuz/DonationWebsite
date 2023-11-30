@@ -1,81 +1,83 @@
+:root {
+  --grayish-white: #f0f0f0;
+  --green: #0f3d3e;
+  --blue: #4da6ff;
+  --light_green: rgba(15, 61, 62, 0.75);
+  --yellow: #ffd369;
+}
+
 body {
-  color: #f0f0f0;
+  background-color: var(--grayish-white);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  padding-top: 100px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Sayfanın tamamını kaplamak için */
-  margin: 0; /* Sayfanın kenar boşluklarını sıfırlamak için */
+  height: 100vh;
+  margin: 0;
 }
-h1 {
-  color: #4da6ff;
-  font-family: "Poppins", sans-serif;
+
+.container {
+  width: 94%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* info_about_donations */
+
+#info_about_donations {
+  text-align: center;
+}
+
+#info_about_donations h2 {
+  font-size: 30px;
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 4.5px;
+}
+
+#info_about_donations h1 {
   font-size: 60px;
-  font-weight: 1000;
-  line-height: 90px;
-  letter-spacing: 0.15em;
-  text-align: left;
-}
-h2 {
-  color: #0f3d3e;
-  font-family: "Poppins", sans-serif;
-  white-space: nowrap;
-  font-family: Poppins;
-  font-size: 28px;
-  font-weight: 1000;
-  line-height: 45px;
-  letter-spacing: 0.15em;
-  text-align: left;
-}
-p {
-  color: #0f3d3e;
-  font-family: Poppins;
-  font-size: 12px;
-  font-weight: 6;
-  line-height: 15px;
-  letter-spacing: 0.15em;
-  text-align: center;
-}
-.title {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-}
-.title1 {
-  position: absolute;
-  top: 120px;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-}
-.title2 {
-  position: absolute;
-  top: 220px;
-  left: 50%;
-  text-align: center;
-  transform: translateX(-50%);
-}
-.text {
-  width: 880px;
-  margin-top: -90px;
-  text-align: center;
+  color: var(--blue);
+  font-weight: 900;
+  letter-spacing: 9px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-hr {
-  width: 880px;
-  height: 1px;
-  background-color: #ffd369;
+#info_about_donations p {
+  color: var(--light_green);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  max-height: 300px;
-  background: #0f3d3e;
-  /* border-radius: 50px 50px 0px 0px; */
-  border-top-left-radius: 500px;
-  border-top-right-radius: 500px;
-  /* padding: 0px; */
+#info_about_donations .sacrificial_info {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+#info_about_donations hr {
+  border: none;
+  background-color: var(--yellow);
+  width: 1160px;
+  height: 4px;
+  /* margin-top: 40px;
+  margin-bottom: 72px; */
+}
+
+#info_about_donations p .green_highlight {
+  color: var(--green);
+  font-style: normal;
+  font-weight: 700;
+}
+
+#info_about_donations p .blue_highlight {
+  color: var(--blue);
+  font-style: normal;
+  font-weight: 900;
 }
