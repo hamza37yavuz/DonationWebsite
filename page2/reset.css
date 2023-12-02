@@ -123,3 +123,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+input {
+  padding: 0;
+  outline: none;
+  border: none;
+}

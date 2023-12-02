@@ -4,6 +4,9 @@
   --blue: #4da6ff;
   --light_green: rgba(15, 61, 62, 0.75);
   --yellow: #ffd369;
+  --black: #000;
+  --white: #fff;
+  --shadows: rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -12,7 +15,6 @@ body {
   font-size: 20px;
   line-height: normal;
   padding-top: 100px;
-  display: flex;
   height: 100vh;
   margin: 0;
 }
@@ -48,7 +50,6 @@ body {
 
 #info_about_donations p {
   color: var(--light_green);
-  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 3px;
@@ -64,10 +65,11 @@ body {
 #info_about_donations hr {
   border: none;
   background-color: var(--yellow);
-  width: 1160px;
+  width: 94%;
+  max-width: 1160px;
   height: 4px;
-  /* margin-top: 40px;
-  margin-bottom: 72px; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #info_about_donations p .green_highlight {
@@ -80,4 +82,128 @@ body {
   color: var(--blue);
   font-style: normal;
   font-weight: 900;
+}
+
+/* donation_registration */
+
+#donation_registration {
+  text-align: center;
+}
+
+#donation_registration .donation_type_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#donation_registration .donation_type_buttons button {
+  width: 580px;
+  height: 80px;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 4.5px;
+}
+
+#donation_registration .donation_type_buttons button#well_button {
+  border-bottom: 4px solid var(--green);
+  border-radius: 30px;
+}
+
+#donation_registration .donation_type_buttons button#sacrificial_button {
+  background-color: var(--white);
+  border-bottom: 4px solid var(--yellow);
+  border-radius: 30px;
+}
+
+#donation_registration form {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#donation_registration form .input-group label {
+  display: block;
+  text-align: left;
+  padding-left: 30px;
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+#donation_registration form .input-group input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 70px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 20px;
+  background: var(--white);
+  box-shadow: 0px 4px 10px 0px var(--shadows);
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 40px;
+  transition: border 0.3s;
+}
+
+#donation_registration form .input-group input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+#donation_registration form .total_amount_info {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#donation_registration form .total_amount_info p {
+  color: var(--green);
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 3.75px;
+}
+
+#donation_registration form .total_amount_info span {
+  color: var(--blue);
+}
+
+#donation_registration form button {
+  width: 300px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 3.75px;
+  background-color: var(--blue);
+  color: var(--grayish-white);
+  filter: drop-shadow(0px 4px 10px var(--shadows));
+  border-radius: 9999px;
+}
+
+/* #donation_registration form button:hover {
+  color: var(--yellow);
+  background: var(--light_green);
+} */
+
+footer {
+  width: 100%;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  margin-top: 200px;
+  border-radius: 50px 50px 0px 0px;
+  background: var(--green);
 }
