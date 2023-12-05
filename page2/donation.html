@@ -60,10 +60,14 @@
     <div class="container">
       <section id="donation_registration">
         <div class="donation_type_buttons">
-          <button id="well_button">Kuyu Hissesi</button>
-          <button id="sacrificial_button">Kurban Bağışı</button>
+          <button id="well_button" onclick="showWellForm()">
+            Kuyu Hissesi
+          </button>
+          <button id="sacrificial_button" onclick="showSacrificialForm()">
+            Kurban Bağışı
+          </button>
         </div>
-        <form autocomplete="off">
+        <form autocomplete="off" id="donation_form">
           <div class="input-group">
             <label>İsim-Soyisim</label>
             <input type="text" required placeholder="İsim-Soyisim" />
@@ -79,17 +83,20 @@
             <input type="tel" required placeholder="+90555 555 55 55" />
             <span class="line"></span>
           </div>
-          <div class="input-group">
+          <div class="input-group" id="well_quantity_input">
             <label>Kaç Kuyu Hissesi Almak İstersiniz?</label>
             <input type="number" required placeholder="örneğin : 3" />
             <span class="line"></span>
           </div>
-          <!-- <div class="check">
-            <label>
-              <input type="checkbox" />
-              <span>Şartlar & koşulları kabul ediyorum</span>
-            </label>
-          </div> -->
+          <div class="input-group hidden" id="sacrificial_type_input">
+            <label>Kurbanlık Hayvan Türünü Seçin</label>
+            <select id="animal_type" onchange="showAnimalQuantityInput()">
+              <option value="kucukbas">Küçükbaş</option>
+              <option value="buyukbas">Büyükbaş</option>
+            </select>
+            <span class="line"></span>
+          </div>
+          <div class="input-group hidden" id="animal_quantity_input"></div>
           <div class="total_amount_info">
             <p>
               Toplam tutar :

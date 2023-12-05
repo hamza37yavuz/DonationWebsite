@@ -1,15 +1,27 @@
-const wellButton = document.querySelector("#well_button");
-const sacrificialButton = document.querySelector("#sacrificial_button");
-const saveButton = document.querySelector("#save_button");
+function showWellForm() {
+  document.getElementById("well_quantity_input").classList.remove("hidden");
+  document.getElementById("sacrificial_type_input").classList.add("hidden");
+  document.getElementById("animal_quantity_input").classList.add("hidden");
+}
 
-wellButton.addEventListener("click", () => {
-  console.log("wellButton is working!");
-});
+function showSacrificialForm() {
+  document.getElementById("well_quantity_input").classList.add("hidden");
+  document.getElementById("sacrificial_type_input").classList.remove("hidden");
+  showAnimalQuantityInput();
+}
 
-sacrificialButton.addEventListener("click", () => {
-  console.log("sacrificialButton is working!");
-});
+function showAnimalQuantityInput() {
+  var animalType = document.getElementById("animal_type").value;
+  var animalQuantityInput = document.getElementById("animal_quantity_input");
 
-saveButton.addEventListener("click", () => {
-  console.log("saveButton is working!");
-});
+  if (animalType === "kucukbas") {
+    animalQuantityInput.innerHTML =
+      "<label>Kaç Tane Küçükbaş Bağışlamak İstersiniz?</label>" +
+      '<input type="number" required placeholder="örneğin : 3" />';
+  } else if (animalType === "buyukbas") {
+    animalQuantityInput.innerHTML =
+      "<label>Kaç Tane Hisse Almak İstersiniz?</label>" +
+      '<input type="number" required placeholder="örneğin : 3" />';
+  }
+  animalQuantityInput.classList.remove("hidden");
+}

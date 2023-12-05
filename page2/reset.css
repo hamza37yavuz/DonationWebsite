@@ -136,3 +136,12 @@ input {
   outline: none;
   border: none;
 }
+
+select {
+  padding: 0;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
