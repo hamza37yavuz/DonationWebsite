@@ -1,3 +1,7 @@
+const buttons = document.querySelectorAll(
+  "#donation_registration .donation_type_buttons button"
+);
+
 function showWellForm() {
   document.getElementById("well_quantity_input").classList.remove("hidden");
   document.getElementById("sacrificial_type_input").classList.add("hidden");
@@ -25,3 +29,17 @@ function showAnimalQuantityInput() {
   }
   animalQuantityInput.classList.remove("hidden");
 }
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.classList.contains("selected")) {
+      return;
+    }
+
+    buttons.forEach((otherButton) => {
+      otherButton.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+  });
+});
