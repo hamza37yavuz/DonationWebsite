@@ -130,7 +130,6 @@ body {
   width: 580px;
   height: 80px;
   text-align: center;
-  font-family: Poppins;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 4.5px;
@@ -211,10 +210,10 @@ body {
 }
 
 #donation_registration form .input-group input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--titanium);
   font-size: 20px;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 4px;
 }
 
@@ -248,6 +247,7 @@ body {
   color: var(--grayish-white);
   filter: drop-shadow(0px 4px 10px var(--shadows));
   border-radius: 9999px;
+  cursor: pointer;
 }
 
 #donation_registration form button:hover {
@@ -262,7 +262,7 @@ footer {
   width: 100%;
   padding-top: 72px;
   padding-bottom: 72px;
-  margin-top: 200px;
+  margin-top: 144px;
   border-radius: 50px 50px 0px 0px;
   background: var(--green);
 }
@@ -272,4 +272,9 @@ footer .social_connections {
   align-items: center;
   justify-content: center;
   gap: 20px;
+}
+
+footer .social_connections img {
+  width: 30px;
+  height: 30px;
 }

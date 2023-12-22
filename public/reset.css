@@ -145,3 +145,7 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
+a {
+  text-decoration: none;
+}
