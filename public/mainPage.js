@@ -6,21 +6,21 @@ function scrollToSection(sectionId) {
 }
 
 document
-  .getElementById("amac-link")
+  .getElementById("purpose-link")
   .addEventListener("click", function (event) {
     event.preventDefault();
     scrollToSection("informations");
   });
 
 document
-  .getElementById("faaliyet-link")
+  .getElementById("our_activities-link")
   .addEventListener("click", function (event) {
     event.preventDefault();
     scrollToSection("our_activities");
   });
 
 document
-  .getElementById("iletisim-link")
+  .getElementById("connections-link")
   .addEventListener("click", function (event) {
     event.preventDefault();
     scrollToSection("connections");

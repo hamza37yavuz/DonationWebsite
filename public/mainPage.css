@@ -45,7 +45,7 @@ p {
 }
 
 .background-image {
-  background-image: url("./İPfotos/arkaplan.jpg");
+  background-image: url("./İPfotos/background.jpg");
   background-size: cover;
   background-position: center;
   height: 870px;
@@ -150,10 +150,11 @@ nav a {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 3.6px;
+  cursor: pointer;
 }
 
 .nav .vertical-line {
-  border-left: 2px solid var(--yellow); /* Renk ve kalınlığı isteğe bağlı olarak ayarlayabilirsiniz */
+  border-left: 2px solid var(--yellow);
   height: 46px;
   margin: 0 10px;
 }
@@ -170,6 +171,8 @@ nav a {
   width: 650px;
   margin-bottom: 48px;
 }
+
+/* Purpose Section */
 
 .purpose {
   display: flex;
@@ -199,6 +202,8 @@ nav a {
   background: lightgray 50%;
   box-shadow: 0px 4px 10px 0px var(--shadows);
 }
+
+/* Our Activities Section */
 
 .our_activities {
   margin-top: 144px;
@@ -265,6 +270,8 @@ nav a {
   font-weight: 500;
   letter-spacing: 3.6px;
 }
+
+/* Connection Section */
 
 .connections {
   margin-top: 144px;
