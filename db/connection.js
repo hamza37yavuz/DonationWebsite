@@ -1,48 +1,57 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
-const sequelize = new Sequelize({
-  dialect: "postgres",
-  host: "localhost",
-  port: 5432,
-  username: "postgres",
-  password: "123789",
-  database: "postgres",
-});
+async function connectDB(password) {
+  const sequelize = new Sequelize({
+    dialect: "postgres",
+    host: "localhost",
+    port: 5432,
+    username: "postgres",
+    password: password,
+    database: "postgres",
+  });
 
-const User = sequelize.define(
-  "User",
-  {
-    userid: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true, // userid sütununu primary key olarak belirtin
-    },
-    fullname: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 50],
+  const User = sequelize.define(
+    "User",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      created_at: {
+        type: DataTypes.DATE,
+        defaultValue: Sequelize.fn("NOW"),
       },
     },
-  },
-  {
-    tableName: "users",
-    timestamps: false, // timestamps seçeneğini false olarak ayarlayın
-  }
-);
+    {
+      tableName: "users",
+      timestamps: false,
+    }
+  );
 
-sequelize.sync();
+  await sequelize.authenticate(); // Veritabanı bağlantısını test etmek için ekledim
+  console.log("Database connection successful");
 
-async function getUsers() {
-  try {
-    const users = await User.findAll();
-    console.log(users);
-  } catch (error) {
-    console.error("Error fetching users:", error);
-  }
+  return { sequelize, User };
 }
 
-// getUsers fonksiyonunu çağırın
-getUsers();
-
-module.exports = User;
+module.exports = {
+  connectDB,
+};
