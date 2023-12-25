@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        nav {
+            background-color: #444;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        select, input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .donation-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#photo1" onclick="showSection('photo1')">Foto 1</a></li>
+            <li><a href="#photo2" onclick="showSection('photo2')">Foto 2</a></li>
+            <li><a href="#photo3" onclick="showSection('photo3')">Foto 3</a></li>
+            <li><a href="#photo4" onclick="showSection('photo4')">Foto 4</a></li>
+            <li><a href="#photo5" onclick="showSection('photo5')">Foto 5</a></li>
+            <li><a href="#posts" onclick="showSection('posts')">Yazıları Değiştir</a></li>
+            <li><a href="#donations" onclick="showSection('donations')">Bağışları Görüntüle</a></li>
+        </ul>
+    </nav>
+
+    <section id="photo1">
+        <h2>Foto 1</h2>
+        <img id="currentPhoto1" src="path/to/photo1.jpg" alt="Foto 1 Fotoğraf">
+        <label for="fileInput1">Yeni Fotoğraf Yükle:</label>
+        <input type="file" id="fileInput1" accept="image/*" onchange="displaySelectedPhoto(1)">
+    </section>
+
+    <section id="photo2" style="display: none;">
+        <h2>Foto 2</h2>
+        <img id="currentPhoto2" src="path/to/photo2.jpg" alt="Foto 2 Fotoğraf">
+        <label for="fileInput2">Yeni Fotoğraf Yükle:</label>
+        <input type="file" id="fileInput2" accept="image/*" onchange="displaySelectedPhoto(2)">
+    </section>
+
+    <section id="photo3" style="display: none;">
+        <h2>Foto 3</h2>
+        <img id="currentPhoto3" src="path/to/photo3.jpg" alt="Foto 3 Fotoğraf">
+        <label for="fileInput3">Yeni Fotoğraf Yükle:</label>
+        <input type="file" id="fileInput3" accept="image/*" onchange="displaySelectedPhoto(3)">
+    </section>
+
+    <section id="photo4" style="display: none;">
+        <h2>Foto 4</h2>
+        <img id="currentPhoto4" src="path/to/photo4.jpg" alt="Foto 4 Fotoğraf">
+        <label for="fileInput4">Yeni Fotoğraf Yükle:</label>
+        <input type="file" id="fileInput4" accept="image/*" onchange="displaySelectedPhoto(4)">
+    </section>
+
+    <section id="photo5" style="display: none;">
+        <h2>Foto 5</h2>
+        <img id="currentPhoto5" src="path/to/photo5.jpg" alt="Foto 5 Fotoğraf">
+        <label for="fileInput5">Yeni Fotoğraf Yükle:</label>
+        <input type="file" id="fileInput5" accept="image/*" onchange="displaySelectedPhoto(5)">
+    </section>
+
+    <section id="posts" style="display: none;">
+        <h2>Yazıları Değiştir</h2>
+        <!-- Buraya yazıları değiştirmek için gerekli form veya alanları ekleyebilirsiniz -->
+    </section>
+
+    <section id="donations" style="display: none;">
+        <h2>Bağışları Görüntüle</h2>
+        <div class="donation-info">
+            <p>Toplam Kuyu Bağışı Yapan Foto Sayısı: <span id="totalWellDonors">0</span></p>
+            <p>Toplam Kurban Bağışı Yapan Foto Sayısı: <span id="totalQurbanDonors">0</span></p>
+            <!-- Buraya daha fazla bilgi ekleyebilirsiniz -->
+        </div>
+    </section>
+
+    <script>
+        function displaySelectedPhoto(personNumber) {
+            var fileInput = document.getElementById('fileInput' + personNumber);
+            var currentPhoto = document.getElementById('currentPhoto' + personNumber);
+
+            // Seçilen dosyanın yolunu al
+            var selectedFile = fileInput.files[0];
+
+            if (selectedFile) {
+                // Dosya tipini kontrol et (sadece resim dosyalarına izin ver)
+                if (selectedFile.type.startsWith('image/')) {
+                    // Seçilen dosyayı görüntüle
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        currentPhoto.src = e.target.result;
+                    };
+                    reader.readAsDataURL(selectedFile);
+                } else {
+                    alert("Lütfen bir resim dosyası seçin.");
+                }
+            }
+        }
+
+        // Bu kısımda genel bilgileri güncelleyen bir JavaScript kodu ekleyebilirsiniz.
+        // Gerçek bir proje için, sunucu tarafında bu bilgileri getirecek bir API kullanmalısınız.
+
+        // Örnek veri (gerçek bir projede sunucu tarafından getirilir)
+        var totalWellDonors = 50;
+        var totalQurbanDonors = 30;
+
+        // HTML içindeki span elementlerini güncelle
+        document.getElementById('totalWellDonors').innerText = totalWellDonors;
+        document.getElementById('totalQurbanDonors').innerText = totalQurbanDonors;
+
+        function showSection(sectionId) {
+            // Tüm bölümleri gizle
+            var allSections = document.querySelectorAll('section');
+            allSections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+
+            // Belirli bölümü göster
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
