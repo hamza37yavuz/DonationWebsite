@@ -1,6 +1,6 @@
 const { dbModel } = require("../models/models");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const { createToken } = require("../middleware/auth");
 
 const getUsers = async (req, res) => {
   try {
@@ -72,12 +72,7 @@ const login = async (req, res) => {
       return;
     }
 
-    const { id, username } = user;
-    const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
-      expiresIn: 30,
-    });
-
-    res.status(200).json({ msg: "User created", token });
+    createToken(user, res);
   } catch (error) {
     console.error("Error login:", error);
     res.status(500).json({ error: "Internal Server Error login" });
