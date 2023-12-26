@@ -15,7 +15,7 @@ const dbModel = async () => {
       },
       username: {
         type: DataTypes.STRING,
-        allowNull: [false, "Username is require!"],
+        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
@@ -37,6 +37,17 @@ const dbModel = async () => {
     {
       tableName: "users",
       timestamps: false,
+      hooks: {
+        beforeValidate: (user, options) => {
+          if (!user.username || !user.email || !user.password) {
+            const error = new Error(
+              "Username, email, and password are required."
+            );
+            error.status = 400;
+            throw error;
+          }
+        },
+      },
     }
   );
 
@@ -103,6 +114,24 @@ const dbModel = async () => {
     {
       tableName: "donator_info",
       timestamps: false,
+      hooks: {
+        beforeValidate: (donator, options) => {
+          if (
+            !donator.name ||
+            !donator.surname ||
+            !donator.telno ||
+            !donator.donationtype ||
+            !donator.donationquantity ||
+            !donator.donationamount
+          ) {
+            const error = new Error(
+              "Name, surname, telno, donationtype, donationquantity and donationamount are required."
+            );
+            error.status = 400;
+            throw error;
+          }
+        },
+      },
     }
   );
 
