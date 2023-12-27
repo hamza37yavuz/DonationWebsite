@@ -55,9 +55,10 @@ const login = async (req, res) => {
     const { User } = await dbModel();
 
     if (!email || !password) {
-      res
-        .status(400)
-        .json({ error: "Username or password are required.login" });
+      res.status(400).json({
+        succes: false,
+        error: "Username or password are required.login",
+      });
       return;
     }
     const user = await User.findOne({
@@ -67,14 +68,20 @@ const login = async (req, res) => {
     });
 
     if (!user) {
-      res.status(400).json({ error: "User not found.login" });
+      res.status(400).json({
+        succes: false,
+        error: "User not found.login",
+      });
       return;
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      res.status(400).json({ error: "Password is incorrect.login" });
+      res.status(400).json({
+        succes: false,
+        error: "Password is incorrect.login",
+      });
       return;
     }
 

@@ -24,14 +24,20 @@ const checkToken = async (req, res, next) => {
     req.headers.authorization.startsWith("Bearer ");
 
   if (!headerToken) {
-    return res.status(400).json({ error: "Invalid Session, Please Log In" });
+    return res.status(400).json({
+      succes: false,
+      error: "Invalid Session, Please Log In",
+    });
   }
 
   const token = req.headers.authorization.split(" ")[1];
 
   jwt.verify(token, process.env.JWT_SECRET_KEY, async (error, decoded) => {
     if (error) {
-      return res.status(400).json({ error: "Invalid token." });
+      return res.status(400).json({
+        succes: false,
+        error: "Invalid token.",
+      });
     }
 
     try {
@@ -43,7 +49,10 @@ const checkToken = async (req, res, next) => {
       });
 
       if (!user) {
-        return res.status(400).json({ error: "User not found." });
+        return res.status(400).json({
+          succes: false,
+          error: "User not found.",
+        });
       }
 
       req.user = {
