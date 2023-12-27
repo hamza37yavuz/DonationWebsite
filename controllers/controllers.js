@@ -54,6 +54,12 @@ const login = async (req, res) => {
     const { email, password } = req.body;
     const { User } = await dbModel();
 
+    if (!email || !password) {
+      res
+        .status(400)
+        .json({ error: "Username or password are required.login" });
+      return;
+    }
     const user = await User.findOne({
       where: {
         email: email,
@@ -79,10 +85,25 @@ const login = async (req, res) => {
   }
 };
 
+const me = async (req, res) => {
+  try {
+    res.status(200).json(req.user);
+  } catch (error) {
+    console.error("Error checking user:", error);
+
+    if (error.status === 400) {
+      res.status(400).json({ error: error.message });
+    } else {
+      res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+};
+
 module.exports = {
   getUsers,
   createUser,
   getWaterWellQuantity,
   saveWaterWellDonation,
   login,
+  me,
 };

@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // routes
-app.use("/api/v1/tasks", router);
+app.use("/api", router);
 
 app.use(notFound);
 
