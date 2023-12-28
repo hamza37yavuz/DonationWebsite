@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="./reset.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./secondPage.css" />
+
+  <body>
+    <div class="container">
+      <section id="info_about_donations">
+        <div class="well_info">
+          <h2>Güney afrikadaki su kuyusunun bitmesine</h2>
+          <h1>62</h1>
+          <h2>hisse kaldı</h2>
+          <p>
+            Yoksul ülkelerde içme suyu sorununa destek olmak için başlatılan
+            kuyu yapımı projemizde, her bir kuyunun maliyeti 3000 dolar olarak
+            hesaplanmıştır. Bu maliyet, 1000 hisseye bölünmüş olup, her
+            <span class="green_highlight"> bir hisse bağışı 3 doları</span>
+            temsil etmektedir. Bağış yapmak isteyenler, en az 1 hisse alarak bu
+            projeye katkıda bulunabilirler.
+          </p>
+        </div>
+        <hr />
+        <div class="sacrificial_info">
+          <h2>Kurban bağışları hakkında</h2>
+          <p>
+            Her bir
+            <span class="blue_highlight">küçükbaş</span>
+            hayvanın maliyeti
+            <span class="green_highlight">3000 TL</span>
+            olarak belirlenmiştir. Bağış yapmak isteyenler, en az bir küçükbaş
+            hayvanın maliyetini karşılayacak şekilde bağışta bulunabilir ve
+            istedikleri sayıda bağış yapma özgürlüğüne sahiptirler.
+          </p>
+          <p>
+            Her bir
+            <span class="blue_highlight">büyükbaş</span>
+            hayvanın fiyatı 24,500 TL olarak belirlenmiş olup, bir hayvanda
+            toplam 7 hisse bulunmaktadır ve
+            <span class="green_highlight">her bir hisse 3,500 TL</span>
+            'ye karşılık gelmektedir. Bağış yapmak isteyenler, en az 1 hisse
+            alarak destek sağlayabilir ve istedikleri takdirde daha fazla hisse
+            alarak katkılarını artırabilirler.
+          </p>
+        </div>
+      </section>
+    </div>
+    <div class="container">
+      <section id="donation_registration">
+        <div class="donation_type_buttons">
+          <button id="well_button" , class="selected" onclick="showWellForm()">
+            Kuyu Hissesi
+          </button>
+          <button id="sacrificial_button" onclick="showSacrificialForm()">
+            Kurban Bağışı
+          </button>
+        </div>
+        <form autocomplete="off" id="donation_form">
+          <div class="input-group">
+            <label>İsim-Soyisim</label>
+            <input type="text" required placeholder="İsim-Soyisim" />
+            <span class="line"></span>
+          </div>
+          <div class="input-group">
+            <label>E-mail</label>
+            <input type="email" required placeholder="örnek@gmail.com" />
+            <span class="line"></span>
+          </div>
+          <div class="input-group">
+            <label>Telefon </label>
+            <input type="tel" required placeholder="+90555 555 55 55" />
+            <span class="line"></span>
+          </div>
+          <div class="input-group" id="well_quantity_input">
+            <label>Kaç Kuyu Hissesi Almak İstersiniz?</label>
+            <input type="number" required placeholder="örneğin : 3" />
+            <span class="line"></span>
+          </div>
+          <div class="input-group hidden" id="sacrificial_type_input">
+            <label>Kurbanlık Hayvan Türünü Seçin</label>
+            <select id="animal_type" onchange="showAnimalQuantityInput()">
+              <option value="kucukbas">Küçükbaş</option>
+              <option value="buyukbas">Büyükbaş</option>
+            </select>
+            <span class="line"></span>
+          </div>
+          <div class="input-group hidden" id="animal_quantity_input"></div>
+          <div class="total_amount_info">
+            <p>
+              Toplam tutar :
+              <span>0$</span>
+            </p>
+          </div>
+          <button id="save_button" type="submit">Kaydet</button>
+        </form>
+      </section>
+    </div>
+    <footer>
+      <div class="social_connections">
+        <img src="icons/fecabook.svg" alt="Facebook" />
+        <img src="icons/instagram.svg" alt="Instagram" />
+        <img src="icons/linkedIn.svg" alt="LinkedIn" />
+        <img src="icons/twitter.svg" alt="X" />
+      </div>
+    </footer>
+    <script src="./secondPage.js"></script>
+  </body>
+</html>

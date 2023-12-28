@@ -1,0 +1,280 @@
+/*
+          $$\ $$\                  $$\     
+          \__|$$ |                 $$ |    
+$$$$$$$\  $$\ $$$$$$$\   $$$$$$\ $$$$$$\   
+$$  __$$\ $$ |$$  __$$\  \____$$\\_$$  _|  
+$$ |  $$ |$$ |$$ |  $$ | $$$$$$$ | $$ |    
+$$ |  $$ |$$ |$$ |  $$ |$$  __$$ | $$ |$$\ 
+$$ |  $$ |$$ |$$ |  $$ |\$$$$$$$ | \$$$$  |
+\__|  \__|\__|\__|  \__| \_______|  \____/ 
+                                           
+*/
+
+/*
+$$\                                                  
+$$ |                                                 
+$$$$$$$\   $$$$$$\  $$$$$$\$$$$\  $$$$$$$$\ $$$$$$\  
+$$  __$$\  \____$$\ $$  _$$  _$$\ \____$$  |\____$$\ 
+$$ |  $$ | $$$$$$$ |$$ / $$ / $$ |  $$$$ _/ $$$$$$$ |
+$$ |  $$ |$$  __$$ |$$ | $$ | $$ | $$  _/  $$  __$$ |
+$$ |  $$ |\$$$$$$$ |$$ | $$ | $$ |$$$$$$$$\\$$$$$$$ |
+\__|  \__| \_______|\__| \__| \__|\________|\_______|
+                                                     
+*/
+:root {
+  --grayish-white: #f0f0f0;
+  --green: #0f3d3e;
+  --blue: #4da6ff;
+  --light_green: rgba(15, 61, 62, 0.75);
+  --yellow: #ffd369;
+  --black: #000;
+  --white: #fff;
+  --shadows: rgba(0, 0, 0, 0.4);
+  --titanium: #dddddd;
+}
+
+body {
+  background-color: var(--grayish-white);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  line-height: normal;
+  padding-top: 100px;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 94%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* info_about_donations */
+
+#info_about_donations {
+  text-align: center;
+}
+
+#info_about_donations h2 {
+  font-size: 30px;
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 4.5px;
+}
+
+#info_about_donations h1 {
+  font-size: 60px;
+  color: var(--blue);
+  font-weight: 900;
+  letter-spacing: 9px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#info_about_donations p {
+  color: var(--light_green);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#info_about_donations .sacrificial_info {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+#info_about_donations hr {
+  border: none;
+  background-color: var(--yellow);
+  width: 94%;
+  max-width: 1160px;
+  height: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#info_about_donations p .green_highlight {
+  color: var(--green);
+  font-style: normal;
+  font-weight: 700;
+}
+
+#info_about_donations p .blue_highlight {
+  color: var(--blue);
+  font-style: normal;
+  font-weight: 900;
+}
+
+/* donation_registration */
+
+#donation_registration {
+  text-align: center;
+}
+
+#donation_registration .donation_type_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#donation_registration .donation_type_buttons button {
+  width: 580px;
+  height: 80px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 4.5px;
+  border-bottom: 4px solid var(--green);
+  border-radius: 30px;
+}
+
+.donation_type_buttons .selected {
+  background-color: var(--white) !important;
+  border-bottom: 4px solid var(--yellow) !important;
+  border-radius: 30px;
+  transition: 0.15s;
+}
+
+.donation_type_buttons button:hover {
+  background-color: var(--titanium);
+  border: 4px solid var(--green);
+  border-radius: 30px;
+  transition: 0.15s;
+}
+
+.donation_type_buttons button.selected:hover {
+  background-color: var(--titanium) !important;
+  border: 4px solid var(--yellow) !important;
+  border-radius: 30px;
+  transition: 0.15s;
+}
+
+#donation_registration form {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#donation_registration form .input-group label {
+  display: block;
+  text-align: left;
+  padding-left: 30px;
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+#donation_registration form .input-group input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 70px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 20px;
+  background: var(--white);
+  box-shadow: 0px 4px 10px 0px var(--shadows);
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 40px;
+  transition: border 0.3s;
+}
+
+#donation_registration form select {
+  width: 100%;
+  height: 70px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0.675em 6em 0.675em 30px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px 0px var(--shadows);
+  border: 0;
+  border-radius: 30px;
+  color: #000;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+#donation_registration form .input-group input::placeholder {
+  color: var(--titanium);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+#donation_registration form .total_amount_info {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#donation_registration form .total_amount_info p {
+  color: var(--green);
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 3.75px;
+}
+
+#donation_registration form .total_amount_info span {
+  color: var(--blue);
+}
+
+#donation_registration form button {
+  width: 300px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 3.75px;
+  background-color: var(--blue);
+  color: var(--grayish-white);
+  filter: drop-shadow(0px 4px 10px var(--shadows));
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+#donation_registration form button:hover {
+  border: 4px solid var(--blue);
+  background: none;
+  color: var(--blue);
+  border-radius: 9999px;
+  transition: 0.15s;
+}
+
+footer {
+  width: 100%;
+  padding-top: 72px;
+  padding-bottom: 72px;
+  margin-top: 144px;
+  border-radius: 50px 50px 0px 0px;
+  background: var(--green);
+}
+
+footer .social_connections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social_connections img {
+  width: 30px;
+  height: 30px;
+}
