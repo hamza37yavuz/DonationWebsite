@@ -4,10 +4,10 @@ const router = express.Router();
 const {
   getUsers,
   createUser,
-  login,
-  me,
   saveDonation,
   getWaterWellQuantity,
+  login,
+  me,
 } = require("../controllers/controllers");
 
 const { checkToken } = require("../middleware/auth");
@@ -16,7 +16,7 @@ router.route("/").get(getUsers);
 router.route("/").post(createUser);
 router.route("/donation").get(getWaterWellQuantity);
 router.route("/login").post(login);
-router.route("/donation").post(saveDonation);
 router.get("/me", checkToken, me);
+router.route("/donation").post(saveDonation);
 
 module.exports = router;
