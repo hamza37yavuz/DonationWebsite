@@ -157,7 +157,38 @@ const dbModel = async () => {
     }
   );
 
-  return { User, WaterWell, DonatorInfo, WaterWellPart };
+  const Sacrifice = sequelize.define(
+    "Sacrifice",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      donator_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+      },
+      country_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      state: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      sacrifice_type: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {
+      tableName: "sacrifice",
+      timestamps: false,
+    }
+  );
+
+  return { User, WaterWell, DonatorInfo, WaterWellPart, Sacrifice };
 };
 
 module.exports = {

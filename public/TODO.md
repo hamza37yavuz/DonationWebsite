@@ -4,3 +4,6 @@
 [ ] Site adı belirlenip "Document" düzeltilecek
 [ ] Logo bulunup hem sitedeki logo düzeltelecek hem de
 title'ın yanına favico.icon olarak eklenecek
+[ ] TL olanları $'a çevir.
+[ ] Oradaki total tutarın girilen sayıya göre
+güncellenmesini sağla.

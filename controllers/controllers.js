@@ -77,7 +77,6 @@ const saveDonation = async (req, res) => {
       donationquantity: req.body.donationquantity,
       donationamount: req.body.donationamount,
     });
-    console.log("Donator ID:", donatorInfo);
     // Donator data prepared
     const data = {
       donator_id: donatorInfo.id,
@@ -94,7 +93,6 @@ const saveDonation = async (req, res) => {
       case 2:
         try {
           const donatorResult = await saveSacrificeDonation(data);
-          console.log("Kurban başarıyla eklendi");
           res.status(201).json({
             success: true,
             message: "Sacrifice kaydı başarıyla eklendi",
@@ -111,7 +109,6 @@ const saveDonation = async (req, res) => {
       case 3:
         try {
           const wellResult = await addWaterWellPart(data);
-          console.log("Kuyu işlemleri yapıldı.");
           res.status(201).json({
             success: true,
             message: "Well kaydı başarıyla eklendi",
@@ -189,7 +186,7 @@ const login = async (req, res) => {
     if (!email || !password) {
       res.status(400).json({
         succes: false,
-        error: "Username or password are required.login",
+        error: "Email or password are required.login",
       });
       return;
     }

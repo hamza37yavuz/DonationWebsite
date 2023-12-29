@@ -25,3 +25,16 @@ document
     event.preventDefault();
     scrollToSection("connections");
   });
+
+let currentCartIndex = 0;
+
+function changeCart(direction) {
+  const carts = document.querySelectorAll(".carts_info");
+  carts[currentCartIndex].classList.remove("active");
+
+  // Calculate the next index
+  currentCartIndex =
+    (currentCartIndex + direction + carts.length) % carts.length;
+
+  carts[currentCartIndex].classList.add("active");
+}

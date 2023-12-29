@@ -81,7 +81,7 @@
           <h1>Faaliyetlerimiz</h1>
           <hr class="short_hr" />
           <div class="cart_section">
-            <button class="left_button">
+            <button class="left_button" onclick="changeCart(-1)">
               <img src="./icons/left.svg" alt="left" />
             </button>
             <div class="carts_info">
@@ -94,7 +94,17 @@
                 </p>
               </div>
             </div>
-            <button class="right_button">
+            <div class="carts_info active">
+              <img src="./İPfotos/activitiesSacrifice.jpg" alt="cart2" />
+              <div class="content-wrapper">
+                <h2>Kurban bağışlarıyla yüzleri güldür</h2>
+                <p>
+                  Kurban bağışları, dünyanın dört bir yanındaki ihtiyaç
+                  sahiplerine umut ve yardım götürüyor.
+                </p>
+              </div>
+            </div>
+            <button class="right_button" onclick="changeCart(1)">
               <img src="./icons/right.svg" alt="right" />
             </button>
           </div>
