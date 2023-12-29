@@ -234,7 +234,7 @@ nav a {
 }
 
 .our_activities .cart_section .active {
-  display: none; /* Initially hide all carts_info elements */
+  display: none;
 }
 
 .our_activities .carts_info {
