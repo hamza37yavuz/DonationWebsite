@@ -39,6 +39,7 @@ async function addWaterWellPart(data) {
         returning: true,
       }
     );
+
     // Check if any rows were affected
     if (updatedWaterWell[0] === 0) {
       throw new Error("No rows were updated in water_well table.");
