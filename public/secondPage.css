@@ -50,6 +50,18 @@ body {
   margin-right: auto;
 }
 
+#loadingSpinner {
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 4.5px;
+}
+
 .hidden {
   display: none;
 }

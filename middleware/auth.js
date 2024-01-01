@@ -36,7 +36,7 @@ const checkToken = async (req, res, next) => {
     if (error) {
       return res.status(400).json({
         succes: false,
-        error: "Invalid token.",
+        error: "Invalid token. auth.39",
       });
     }
 
