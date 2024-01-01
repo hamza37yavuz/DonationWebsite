@@ -5,9 +5,10 @@ const loginBtn = document.getElementById("login_button");
 const mail = document.getElementById("login_mail");
 const password = document.getElementById("login_password");
 const formDOM = document.getElementById("form");
+const makeDonationButton = document.querySelector(".make_donation");
 
 const showShareCount = async () => {
-  if (window.location.href.includes("secondPage.html")) {
+  if (window.location.href.includes("/secondPage")) {
     try {
       const response = await fetch("/api/donation");
 
@@ -30,41 +31,52 @@ const showShareCount = async () => {
 
 showShareCount();
 
-formDOM.addEventListener("submit", async (e) => {
-  const user = {
-    email: mail.value,
-    password: password.value,
-  };
-  e.preventDefault();
+if (makeDonationButton) {
+  makeDonationButton.addEventListener("click", function () {
+    window.location.href = "secondPage";
+    console.log("asdfasosd");
+  });
+}
 
-  console.log("heyy i am heree! 11");
-  try {
-    const { data } = await axios.post("api/login", user);
+if (window.location.href.includes("adminLogin")) {
+  formDOM.addEventListener("submit", async (e) => {
+    const user = {
+      email: mail.value,
+      password: password.value,
+    };
+    e.preventDefault();
 
-    localStorage.setItem("token", data.token);
-  } catch (error) {
-    localStorage.removeItem("token");
-    console.log("fromDom erro");
-  }
-});
+    console.log("heyy i am heree! 11");
+    try {
+      const { data } = await axios.post("api/login", user);
 
-loginBtn.addEventListener("click", async () => {
-  const token = localStorage.getItem("token");
-
-  try {
-    const { data } = await axios.get("api/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (data.success == true) {
-      window.location.href = "admin.html";
+      localStorage.setItem("token", data.token);
+    } catch (error) {
+      localStorage.removeItem("token");
+      console.log("fromDom erro");
     }
-    if (data.success == false) {
-      console.log("Mail veya şifre yanlış!");
+  });
+}
+
+if (window.location.href.includes("adminLogin")) {
+  loginBtn.addEventListener("click", async () => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const { data } = await axios.get("api/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (data.success == true) {
+        window.location.href = "admin.html";
+      }
+      if (data.success == false) {
+        console.log("Mail veya şifre yanlış!");
+      }
+    } catch (error) {
+      console.error("Hata.btnlogin:", error);
     }
-  } catch (error) {
-    console.error("Hata.btnlogin:", error);
-  }
-});
+  });
+}

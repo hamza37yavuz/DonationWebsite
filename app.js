@@ -4,6 +4,10 @@ const express = require("express");
 const app = express();
 const router = require("./routes/routes");
 const notFound = require("./middleware/not-found");
+const pageController = require("./controllers/pageControllers");
+
+const ejs = require("ejs");
+app.set("view engine", "ejs");
 
 const port = process.env.PORT || 3000;
 
@@ -17,6 +21,7 @@ app.get("/adminLogin", (req, res) => {
 });
 
 app.use("/api", router);
+app.get("/secondPage", pageController.getSecondPage);
 
 app.use(notFound);
 
