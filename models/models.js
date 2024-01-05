@@ -138,6 +138,11 @@ const dbModel = async () => {
   const WaterWellPart = sequelize.define(
     "WaterWellPart",
     {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
       donator_id: {
         type: DataTypes.INTEGER,
         allowNull: true,

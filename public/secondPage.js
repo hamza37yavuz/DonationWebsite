@@ -6,12 +6,14 @@ function showWellForm() {
   document.getElementById("well_quantity_input").classList.remove("hidden");
   document.getElementById("sacrificial_type_input").classList.add("hidden");
   document.getElementById("animal_quantity_input").classList.add("hidden");
+  wellAmount()
 }
 
 function showSacrificialForm() {
   document.getElementById("well_quantity_input").classList.add("hidden");
   document.getElementById("sacrificial_type_input").classList.remove("hidden");
   showAnimalQuantityInput();
+  sacrificeAmount()
 }
 
 function showAnimalQuantityInput() {
@@ -28,6 +30,7 @@ function showAnimalQuantityInput() {
       '<input type="number" required placeholder="örneğin : 3" />';
   }
   animalQuantityInput.classList.remove("hidden");
+  quantityInput.addEventListener('input', updateTotalAmount);
 }
 
 buttons.forEach((button) => {
