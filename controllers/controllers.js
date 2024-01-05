@@ -58,7 +58,6 @@ const saveDonation = async (req, res) => {
   try {
   // Donationtype check
   if (req.body.donationtype < 1 || req.body.donationtype > 3 ||typeof req.body.donationtype !== 'number') {
-    console.log("donation type invalid");
     return res.status(400).json({
       success: false,
       message: 'donation type invalid'
@@ -76,7 +75,6 @@ const saveDonation = async (req, res) => {
       donationquantity: req.body.donationquantity,
       donationamount: req.body.donationamount
     });
-    console.log("Donator ID:", donatorInfo);
     // Donator data prepared
     const data = {
       donator_id: donatorInfo.id,
@@ -93,7 +91,6 @@ const saveDonation = async (req, res) => {
       case 2:
         try {
           const donatorResult = await saveSacrificeDonation(data);
-          console.log('Kurban başarıyla eklendi');
           res.status(201).json({
             success: true,
             message: 'Sacrifice kaydı başarıyla eklendi',
@@ -110,7 +107,6 @@ const saveDonation = async (req, res) => {
       case 3:
         try {
           const wellResult = await addWaterWellPart(data);
-          console.log('Kuyu işlemleri yapıldı.');
           res.status(201).json({
             success: true,
             message: 'Well kaydı başarıyla eklendi',
@@ -137,8 +133,6 @@ const saveDonation = async (req, res) => {
     }
   }
 };
-
-
 
 const getUsers = async (req, res) => {
   try {
@@ -181,41 +175,6 @@ const getWaterWellQuantity = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
-
-
-
-
-
-// async function saveWaterWellDonation(data){
-//   const { donator_id, quantity } = data;
-//   try {
-//     const { WaterWell } = await dbModel();
-//     const waterWell = await WaterWell.create({
-//       donator_id: donator_id,
-//       quantity: quantity,
-//       well_id: 1
-//     });
-//     res.status(201).json({ waterWell });
-//     await addWaterWellPart({
-//       donator_id: 1,
-//       quantity: req.body.quantity,
-//     });
-//   } catch (error) {
-
-//     console.error("Error creating user:", error);
-
-//     if (error.status === 400) {
-//       res.status(400).json({ error: error.message });
-//     } else {
-//       res.status(500).json({ error: "Internal Server Error" });
-//     }
-//   }
-// };
-
-
-
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
