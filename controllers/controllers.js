@@ -1,6 +1,7 @@
 const { dbModel } = require("../models/models");
 const bcrypt = require("bcrypt");
 const { createToken } = require("../middleware/auth");
+const { Sequelize, DataTypes } = require("sequelize");
 
 async function saveSacrificeDonation(data) {
   try {
