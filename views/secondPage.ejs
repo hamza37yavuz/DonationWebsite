@@ -79,23 +79,23 @@
           </div>
           <form autocomplete="off" id="donation_form">
             <div class="input-group">
-              <label>İsim</label>
-              <input type="text" required placeholder="İsim" />
+              <label for="firstName">İsim</label>
+              <input type="text" id="firstName" required placeholder="İsim" />
               <span class="line"></span>
             </div>
             <div class="input-group">
-              <label>Soy İsim</label>
-              <input type="text" required placeholder="Soy İsim" />
+              <label for="lastName">Soy İsim</label>
+              <input type="text" id="lastName" required placeholder="Soy İsim" />
               <span class="line"></span>
             </div>
             <div class="input-group">
-              <label>Telefon </label>
-              <input type="tel" required placeholder="+90555 555 55 55" />
+              <label for="phoneNumber">Telefon </label>
+              <input type="tel" id="phoneNumber" required placeholder="+90555 555 55 55" />
               <span class="line"></span>
             </div>
             <div class="input-group" id="well_quantity_input">
-              <label>Kaç Kuyu Hissesi Almak İstersiniz?</label>
-              <input type="number" required placeholder="örneğin : 3" />
+              <label for="quantity">Kaç Kuyu Hissesi Almak İstersiniz?</label>
+              <input type="number" id="quantity" required placeholder="örneğin : 3" />
               <span class="line"></span>
             </div>
             <div class="input-group hidden" id="sacrificial_type_input">
@@ -113,7 +113,7 @@
                 <span>0$</span>
               </p>
             </div>
-            <button id="save_button" type="submit">Kaydet</button>
+            <button id="save_button" type="submit" onclick="submitForm()">Kaydet</button>
           </form>
         </section>
       </div>
