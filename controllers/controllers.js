@@ -148,6 +148,17 @@ const getUsers = async (req, res) => {
   }
 };
 
+const getDonators = async (req, res) => {
+  try {
+    const { DonatorInfo } = await dbModel();
+    const Donators = await DonatorInfo.findAll();
+    res.json(Donators);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 const createUser = async (req, res) => {
   try {
     const { User } = await dbModel();
@@ -243,4 +254,5 @@ module.exports = {
   saveDonation,
   login,
   me,
+  getDonators
 };

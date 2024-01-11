@@ -22,13 +22,13 @@ function showAnimalQuantityInput() {
   if (animalType === "kucukbas") {
     type = 1
     animalQuantityInput.innerHTML =
-      "<label for='quantity'>Kaç Tane Küçükbaş Bağışlamak İstersiniz?</label>" +
-      '<input type="number" id ="quantity" required placeholder="örneğin : 3" />';
+      "<label for='quantity1'>Kaç Tane Küçükbaş Bağışlamak İstersiniz?</label>" +
+      '<input type="number" id ="quantity1" required placeholder="örneğin : 3" />';
   } else if (animalType === "buyukbas") {
     type = 2
     animalQuantityInput.innerHTML =
-      "<label for='quantity'>Kaç Tane Hisse Almak İstersiniz?</label>" +
-      '<input type="number" id ="quantity" required placeholder="örneğin : 3" />';
+      "<label for='quantity2'>Kaç Tane Hisse Almak İstersiniz?</label>" +
+      '<input type="number" id ="quantity2" required placeholder="örneğin : 3" />';
   }
   animalQuantityInput.classList.remove("hidden");
 }
@@ -52,16 +52,20 @@ function submitForm() {
   var firstName = document.getElementById('firstName').value;
   var lastName = document.getElementById('lastName').value;
   var phoneNumber = document.getElementById('phoneNumber').value;
-  var quantity = document.getElementById('quantity').value;
+  
+  
 
   // JSON formatına dönüştür
   var amount = 0
   if (type === 1) {
+    var quantity = document.getElementById('quantity1').value;
     amount = 3000*quantity
   } else if (type === 2) {
+    var quantity = document.getElementById('quantity2').value;
     amount = 3500*quantity
   }
   else{
+    var quantity = document.getElementById('quantity').value;
     amount = 100*quantity
   }
 
@@ -83,11 +87,12 @@ function submitForm() {
 })
 .then(response => response.json())
 .then(data => {
-  alert(type)
+  alert('KAYIT BAŞARILI...')
+  window.location.reload();
 })
 .catch((error) => {
-    console.error('Hata oluştu:', error);
-    alert('Hata oluştu:', error)
+    console.error('KAYIT BAŞARILI', error);
+    alert('KAYIT BAŞARILI', error)
 });
   // Değişkeni konsola yazdır (test amaçlı)
 

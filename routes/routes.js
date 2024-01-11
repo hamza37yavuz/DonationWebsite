@@ -8,11 +8,13 @@ const {
   getWaterWellQuantity,
   login,
   me,
+  getDonators,
 } = require("../controllers/controllers");
 
 const { checkToken } = require("../middleware/auth");
 
 router.route("/").get(getUsers);
+router.route("/donators").get(getDonators);
 router.route("/").post(createUser);
 router.route("/donation").get(getWaterWellQuantity);
 router.route("/login").post(login);
