@@ -5,8 +5,8 @@ async function connectDB(password) {
     dialect: "postgres",
     host: "localhost",
     port: 5432,
-    username: "root",
-    password: "root",
+    username: "postgres",
+    password: password,
     database: "donation_db",
   });
 

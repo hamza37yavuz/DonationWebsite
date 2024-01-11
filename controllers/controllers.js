@@ -19,7 +19,7 @@ async function saveSacrificeDonation(data) {
     };
   } catch (error) {
     console.error("Error creating Sacrifice:", error);
-    throw error; // Hata durumunda hatayı yukarıya fırlat
+    throw error;
   }
 }
 
@@ -254,5 +254,5 @@ module.exports = {
   saveDonation,
   login,
   me,
-  getDonators
+  getDonators,
 };

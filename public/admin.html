@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
-    <link rel="shortcut icon" href="../public/İPfotos/logo.ico" type="image/x-icon" >
+    <link
+      rel="shortcut icon"
+      href="../public/İPfotos/logo.ico"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./admin.css" />
   </head>
   <body>
@@ -96,24 +100,23 @@
     </section>
 
     <section id="donations" style="display: none">
-      <h2>Bağışları Görüntüle</h2>
-      <section id="donations" style="display: none">
-        <h2>Bağışları Görüntüle</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Ad</th>
-              <th>Soyad</th>
-              <th>Telefon</th>
-              <th>Bağış Türü</th>
-              <th>Bağış Miktarı</th>
-            </tr>
-          </thead>
-          <tbody id="donatorsTableBody">
-            <!-- Bu kısım JavaScript tarafından doldurulacak -->
-          </tbody>
-        </table>
-      </section>
+      <h2 id="showDonations">Bağışları Görüntüle</h2>
+      <table id="myTable">
+        <thead>
+          <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Telefon</th>
+            <th>Bağış Türü</th>
+            <th>Bağış Miktarı</th>
+            <th>Bağış Tutarı</th>
+          </tr>
+        </thead>
+        <tbody id="donatorsTableBody">
+          <!-- Bu kısım JavaScript tarafından doldurulacak -->
+        </tbody>
+      </table>
+    </section>
     <script src="browser-app.js"></script>
     <script src="admin.js"></script>
   </body>

@@ -1,59 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-  }
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+}
 
-  nav {
-    background-color: #444;
-  }
+nav {
+  background-color: #444;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-  li {
-    float: left;
-  }
+li {
+  float: left;
+}
 
-  a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-  a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-  section {
-    padding: 20px;
-  }
+section {
+  padding: 20px;
+}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-  select,
-  input[type="file"] {
-    margin-bottom: 10px;
-  }
+select,
+input[type="file"] {
+  margin-bottom: 10px;
+}
 
-  .donation-info {
-    margin-top: 20px;
-  }
+.donation-info {
+  margin-top: 20px;
+}
+
+#myTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#myTable th {
+  background-color: #f2f2f2;
+}
+
+#myTable td,
+#myTable th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#myTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#myTable td {
+  text-align: center;
+}
